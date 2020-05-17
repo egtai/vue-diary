@@ -8,23 +8,27 @@
 <script>
 import NoteBook from '@/components/NoteBook'
 import Page from '@/components/Page'
-import * as firebase from 'firebase/app'
+// import * as firebase from 'firebase/app'
+
 // import Firebase from 'firebase/app'
 // import 'firebase/<PACKAGE>'
 // 调用initializeAp方法，并传入我们的配置信息
 // database()在firbase实例上调用方法以取回firbase数据库实例
 // 调用ref()获取对根的引用
-
-// firebase init goes here
+let firebase = require('firebase/app')
+require('firebase/database')
 const firebaseConfig = {
-  apiKey: 'apiKey',
-  authDomain: 'authDomain',
-  databaseURL: 'https://notebook-ac4b8.firebaseio.com/',
-  projectId: 'projectId',
-  storageBucket: 'storageBucket',
-  messagingSenderId: 'messagingSenderId'
+  apiKey: 'AIzaSyDKoy7scLk0WBXA0aTRbu1_yLMc5vzu6RE',
+  authDomain: 'notebook-ac4b8.firebaseapp.com',
+  databaseURL: 'https://notebook-ac4b8.firebaseio.com',
+  projectId: 'notebook-ac4b8',
+  storageBucket: 'notebook-ac4b8.appspot.com',
+  messagingSenderId: '1038876622762',
+  appId: '1:1038876622762:web:b6fb5036238fdbd64ef5d3',
+  measurementId: 'G-21J6HCBX0V'
 }
-const database = firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig)
+var database = firebase.database().ref()
 export default {
   name: 'Home',
   components: {
